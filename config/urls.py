@@ -22,6 +22,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path, include
 
+from django.views.static import serve
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage),
@@ -30,4 +32,4 @@ urlpatterns = [
     path('users/', include('users.urls')), # This connect your app's URLS
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # This line is used to serve media files during development. It appends a URL pattern to serve media files from the MEDIA_URL and MEDIA_ROOT defined in settings.py.
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # This line is used to serve media files during development. It appends a URL pattern to serve media files from the MEDIA_URL and MEDIA_ROOT defined in settings.py.
